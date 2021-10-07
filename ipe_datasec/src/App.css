@@ -6,6 +6,13 @@
     'Lucida Sans', Arial, sans-serif;
 }
 
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
 body {
   background: linear-gradient(
     90deg,
@@ -24,6 +31,7 @@ body {
   margin: 128px auto;
   border-radius: 10px;
   padding-bottom: 32px;
+  align-items: center;
 }
 
 h1 {
@@ -49,6 +57,8 @@ h1 {
   width: 320px;
   background: transparent;
   color: #fff;
+  margin-bottom: 50px;
+  font-size: 23px;
 }
 
 .todo-input::placeholder {
@@ -144,4 +154,13 @@ h1 {
 
 .edit-icon {
   color: #fff;
+}
+
+.bloco {
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: #e2e2e2;
+  margin-top: 60px;
 }
