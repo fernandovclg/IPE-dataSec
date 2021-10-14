@@ -32,7 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 520px;
+  width: 50%;
   min-height: 600px;
   background: #161a2b;
   text-align: center;

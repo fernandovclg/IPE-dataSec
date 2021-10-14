@@ -42,6 +42,9 @@ const reducer = (state = InitialState , action ) => {
         }
         else if(state.estadoPergunta.pergunta===1){
             relatorio.implementados += action.pontuacao
+            if(state.estadoPergunta.bloco === 0){
+                relatorio.implementados1_6 += action.pontuacao
+            }
         }
         else if(state.estadoPergunta.pergunta===2){
             relatorio.automatizados += action.pontuacao

@@ -19,6 +19,7 @@ function TelaDaPergunta(props) {
     <>
       <h1>Cis: {Dados[estadoPergunta.bloco][estadoPergunta.cis].nome}</h1>
       <h3>SubCis: {Dados[estadoPergunta.bloco][estadoPergunta.cis].subCis[estadoPergunta.subCis].titulo}</h3>
+      <h3>Descrição: {Dados[estadoPergunta.bloco][estadoPergunta.cis].subCis[estadoPergunta.subCis].description}</h3>
 
       <div className='todo-input'>
           {quest[estadoPergunta.pergunta].pergunta} 
