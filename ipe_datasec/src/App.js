@@ -4,30 +4,24 @@ import TodoList from './components/TelaDaPergunta';
 import Dados from './data/Data';
 import Formulario from './screens/Formulario';
 import Resultados from './screens/Resultados'
+import Home from './screens/Home';
+import { setTela } from './store/Actions';
+import {useSelector , useDispatch} from 'react-redux'
 
 function App() {
 
-  // const [saldo, setSaldo] = useState(0)
-  const [relatorio, setRelatorio] = useState({
-    PoliConc:0,
-    implem1_6:0,
-    implem:0,
-    autom:0,
-    rela:0,
-    saldo:0
-  })
-  const [tela, setTela] = useState("Form")
+  const tela = useSelector( state => state.tela )
+  const dispatch = useDispatch() 
+
 
   const navigate = (tela)=>{
     switch (tela) {
+      case "Home":
+        return(<Home setTela={()=>dispatch( setTela("Form") )}/>)
       case "Form":
-        return(<Formulario  relatorio={relatorio}
-                            // setSaldo={setSaldo}
-                            navigate={navigate}/>)
+        return(<Formulario navigate={navigate}/>)
       case "Res":
-        return(<Resultados  relatorio={relatorio}
-                            setRelatorio={setRelatorio}
-                            navigate={navigate}/>)
+        return(<Resultados navigate={navigate}/>)
       default :
         alert("Sem Tela Correspondente")
         return 0
@@ -39,3 +33,4 @@ function App() {
 }
 
 export default App;
+

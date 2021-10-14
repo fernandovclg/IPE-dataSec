@@ -37,8 +37,7 @@ function Formulario(props) {
 
   // }
 
-console.log("imprimir nnn")
-console.log(estadoPergunta)
+
   return (
   <div className='mainContainer'>
       <div className='bloco'>

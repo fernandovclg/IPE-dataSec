@@ -1,6 +1,7 @@
 import { Dados, quest } from "../data/Data"
 
 const InitialState = {
+    tela:"Home",
     estadoPergunta:{
         bloco:0,
         cis:0,
@@ -8,7 +9,7 @@ const InitialState = {
         pergunta:0,
     },
 
-    estadoAnterior: null,
+    estadoAnterior: [],
 
     relatorio:{
         politicasConcluidas:0,
@@ -20,6 +21,18 @@ const InitialState = {
 }
 
 const reducer = (state = InitialState , action ) => {
+
+    var tela = state.tela
+
+    const salvar = () => {
+        var eA = [...state.estadoAnterior]
+        eA.push({
+            estadoPergunta: state.estadoPergunta,
+            relatorio: state.relatorio,
+            tela:tela,
+        })
+        return eA
+    }
 
     const pontuar = () => {
         var relatorio = {...state.relatorio}
@@ -40,16 +53,67 @@ const reducer = (state = InitialState , action ) => {
     }
 
     const avancar = () => {
-        ep = state.estadoPergunta
-        if(!!Dados[ep.bloco])
+        const ep = state.estadoPergunta
+        var epAux = {...ep}
+
+        if(!!Dados[ep.bloco][ep.cis].subCis[ep.subCis].quest[ep.pergunta+1]){
+            epAux.pergunta += 1
+        }
+        else {
+            epAux.pergunta = 0
+            if(!!Dados[ep.bloco][ep.cis].subCis[ep.subCis + 1]){
+              epAux.subCis += 1
+            }
+            else {
+                epAux.subCis = 0
+                if(!!Dados[ep.bloco][ep.cis+1]){
+                    epAux.cis += 1
+                }
+                else{
+                    epAux.cis = 0
+                    if(!!Dados[ep.bloco+1]){
+                        epAux.bloco += 1 
+                    }
+                    else {
+                        tela= "Res"
+                    }
+                }
+
+            }
+        }
+        return epAux
     }
+
+    const finalizar = () => {}
 
     switch(action.type) {
             case 'RESPONDER' :
+                return { ...state , 
+                            relatorio : pontuar() , 
+                            estadoPergunta : avancar() ,
+                            estadoAnterior : salvar() ,
+                            tela: tela ,
+                        }
+            case 'VOLTAR' :
+                const voltar = () =>{
+                    const eA = [...state.estadoAnterior]
+                    eA.pop()
+                    return eA
+                }
+                return { ...state.estadoAnterior.slice(-1)[0] , 
+                            estadoAnterior : voltar() ,
+                        }
+            case 'SET_TELA':
+                return { ...state , 
+                            tela: action.tela,
+                        }
+            case 'CONCLUIR':
+                return { ...state , 
+                            tela: "Res",
+                        }
+    
 
-        
-                    return { ...state , relatorio : pontuar()}
-            default: return{...state}
+            default: return {...state}
     }
 }
 

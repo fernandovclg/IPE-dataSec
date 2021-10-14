@@ -13,6 +13,17 @@ function TodoList(props) {
           Resultado
       </div>
       <div className="todo-row">
+          
+      </div>
+      <div className="todo-row">
+          {props.saldo}
+          resul: {resul(1.2)}
+      </div>
+      <div className="todo-row">
+          {props.saldo}
+          resul: {resul(1.2)}
+      </div>
+      <div className="todo-row">
           {props.saldo}
           resul: {resul(1.2)}
       </div>
