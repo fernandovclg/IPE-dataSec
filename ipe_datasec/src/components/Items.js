@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
+import quest from '../data/Data'
+import { responder } from '../store/Actions';
+import {useSelector , useDispatch} from 'react-redux'
 
-const Item = (props) => {
+const ItemComp = (props) => {
 
+  const dispatch = useDispatch() 
 
-  return props.items.map((item, index) => (
+  return(
     <div
       className={ 'todo-row'}
-      key={index}
-      onClick={()=>props.responder(item.pontuacao)}
+      key={props.index}
+      onClick={()=> dispatch( responder(props.pontuacao) ) }
     >
-      <div key={item.id}>
-        {item.enunciado}
+      <div key={props.index}>
+        {props.enunciado}
       </div>
       
     </div>
-  ));
+  )
 };
 
-export default Item;
+export default ItemComp;

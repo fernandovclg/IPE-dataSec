@@ -1,56 +1,52 @@
 import React, { useState } from 'react';
 import TelaDaPergunta from '../components/TelaDaPergunta';
 import Dados from '../data/Data';
+import {useSelector} from 'react-redux'
+
 
 function Formulario(props) {
+  const estadoPergunta = useSelector( state => state.estadoPergunta )
 
 
-  const [saldo, setSaldo] = useState(0)
-  const [bloco, setBloco] = useState(0)
-  const [cis,setCis] = useState(0)
-  const [pergunta,setPergunta] = useState(0)
-  var cisNum = 1
+  // const [bloco, setBloco] = useState(0)
+  // const [cis,setCis] = useState(0)
+  // const [subCis,setSubCis] = useState(0)
+  // const [pergunta,setPergunta] = useState(0)
+  // var cisNum = 1
 
-  const responder = (pontuacao)=>{
-    setSaldo(saldo + pontuacao)
+  // const responder = (pontuacao)=>{
+  //   // setSaldo(saldo + pontuacao)
 
-    if( !!Dados[bloco][cis].quest[pergunta+1] ){
-      setPergunta(pergunta+1)
-    }
-    else if(!!Dados[bloco][cis+1]){
-      setPergunta(0)
-      setCis(cis+1)
-      cisNum=cisNum+1
-    }
-    else if(!!Dados[bloco+1]){
-      setPergunta(0)
-      setCis(0)
-      cisNum=cisNum+1
-      setBloco(bloco+1)
-    }
-    else{
-      props.navigate("Res")
-    }
+  //   if( !!Dados[bloco][cis].quest[pergunta+1] ){
+  //     setPergunta(pergunta+1)
+  //   }
+  //   else if(!!Dados[bloco][cis+1]){
+  //     setPergunta(0)
+  //     setCis(cis+1)
+  //     cisNum=cisNum+1
+  //   }
+  //   else if(!!Dados[bloco+1]){
+  //     setPergunta(0)
+  //     setCis(0)
+  //     cisNum=cisNum+1
+  //     setBloco(bloco+1)
+  //   }
+  //   else{
+  //     props.navigate("Res")
+  //   }
 
-  }
+  // }
 
-
+console.log("imprimir nnn")
+console.log(estadoPergunta)
   return (
   <div className='mainContainer'>
       <div className='bloco'>
-        Bloco {bloco}
+        Bloco {estadoPergunta.bloco + 1}
       </div>
-      {/* <div>
-        Saldo {saldo}
-      </div> */}
+
     <div className='todo-app'>
-      <TelaDaPergunta  pergunta={pergunta}
-                 setPergunta={setPergunta}
-                 bloco={bloco}
-                 cis={cis}
-                 cisNum={cisNum}
-                 responder={responder}
-      />
+      <TelaDaPergunta />
     </div>
   </div>);
 }

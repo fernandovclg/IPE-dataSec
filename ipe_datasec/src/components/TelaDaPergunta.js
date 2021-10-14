@@ -1,23 +1,35 @@
 import React, { useState } from 'react';
-import Todo from './Items';
-import Dados from '../data/Data';
+import Item from './Items';
+// import Dados from '../data/Data';
+import {quest} from '../data/Data'
 
-function TodoList(props) {
+import {useSelector} from 'react-redux'
 
-  const items = Dados[props.bloco][props.cis].quest[props.pergunta].itens
 
+function TelaDaPergunta(props) {
+  
+ const estadoPergunta = useSelector( state => state.estadoPergunta )
+ const pontos = useSelector( state => state.relatorio.politicasConcluidas )
+ const items = quest[estadoPergunta.pergunta].items
   return (
     <>
-      <h1>Cis {props.cisNum}</h1>
+      <h1>Cis {estadoPergunta.cis}</h1>
+      <h1>SubCis {estadoPergunta.subCis}</h1>
+      <h1>pontos {pontos}</h1>
       <div className='todo-input'>
-          {Dados[props.bloco][props.cis].quest[props.pergunta].pergunta}
+          {quest[estadoPergunta.pergunta].pergunta} 
       </div>
-      <Todo
-        items={items}
-        responder={props.responder}
-      />
+      {
+        items.map(
+          (item , index) => (
+            <Item enunciado={item.enunciado}
+                  pontuacao = {item.pontuacao}
+                  />
+          )
+        )
+      }
     </>
   );
 }
 
-export default TodoList;
+export default TelaDaPergunta;
