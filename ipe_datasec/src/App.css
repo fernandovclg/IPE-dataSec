@@ -24,8 +24,8 @@
 body {
   background: linear-gradient(
     90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
+    #404040 0%,
+    #666600 100%
   );
 }
 .todo-app {
@@ -34,7 +34,7 @@ body {
   justify-content: start;
   width: 50%;
   min-height: 600px;
-  background: #161a2b;
+  background: #0f1325;
   text-align: center;
   margin: 128px auto;
   border-radius: 10px;
@@ -68,7 +68,7 @@ h3 {
 .todo-input {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
+  border: 2px solid #a6aa3e;
   outline: none;
   width: 320px;
   background: transparent;
@@ -89,8 +89,8 @@ h3 {
   outline: none;
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    #666600 0%,
+    #90900070 100%
   );
   color: #fff;
   text-transform: capitalize;
@@ -103,8 +103,8 @@ h3 {
 .todo-button.edit {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    #90EE90 0%,
+    #006400 100%
   );
   padding: 16px 22px;
 }
@@ -113,15 +113,15 @@ h3 {
 .bloco1 {
   background: linear-gradient(
     90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
+    #00FF00 0%, 
+    #3CB371 100%
   );
 }
 .bloco2 {
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    #3CB371 0%,
+    #006400 100%
   );
 }
 
@@ -139,8 +139,8 @@ h3 {
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    #9ACD32 0%,
+    #6B8E23 100%
   );
 
   padding: 16px;
@@ -151,24 +151,24 @@ h3 {
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
+    #3CB371 0%,
+    #404040 100%
   );
 }
 
 .todo-row:nth-child(4n + 2) {
   background: linear-gradient(
     90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
+    #228B22 0%,
+    #404040 100%
   );
 }
 
 .todo-row:nth-child(4n + 3) {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
+    #006400 0%,
+    #404040 100%
   );
 }
 
@@ -198,10 +198,30 @@ h3 {
 }
 
 .txt_resultado {
-  color: rgba(250, 0, 135, 1);
+  color: #cc0000;
   font-size: 30px;
+  font-weight: 600;
+}
+.warn {
+  color: #cc0000;
+  font-size: 15px;
+  font-weight: 100;
 }
 
 .row {
   flex-direction: row;
+}
+.formulario {
+  margin: 20px;
+  min-width: 500px;
+}
+.submit {
+  margin: 20px;
+  max-width: 90px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
 }

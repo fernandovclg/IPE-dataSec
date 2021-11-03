@@ -4,6 +4,7 @@ import Formulario from './screens/Formulario';
 import Resultados from './screens/Resultados'
 import CisMenu from './screens/CisMenu'
 import Home from './screens/Home';
+import InputData from './screens/InputData';
 import { setTela } from './store/Actions';
 import {useSelector , useDispatch} from 'react-redux'
 
@@ -16,13 +17,15 @@ function App() {
   const navigate = (tela)=>{
     switch (tela) {
       case "Home":
-        return(<Home setTela={()=>dispatch( setTela("CisMenu") )}/>)
+        return(<Home setTela={()=>dispatch( setTela("InputData") )}/>)
+      case "InputData":
+        return(<InputData setTela={()=>dispatch( setTela("CisMenu") )}/>)
+      case "CisMenu":
+        return(<CisMenu setTela={()=>dispatch( setTela("Form") )}/>)
       case "Form":
         return(<Formulario navigate={navigate}/>)
       case "Res":
         return(<Resultados navigate={navigate}/>)
-      case "CisMenu":
-        return(<CisMenu setTela={()=>dispatch( setTela("Form") )}/>)
       default :
         alert("Sem Tela Correspondente")
         return 0

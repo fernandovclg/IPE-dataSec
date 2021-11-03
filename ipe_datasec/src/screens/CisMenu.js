@@ -13,7 +13,7 @@ function CisMenu(props) {
   return (
   <div className='mainContainer'>
     
-    <img src="logo.png" alt="Logo" style={{width:100,height:100, position:'absolute',left:150, top:100 , borderRadius:15 , boxShadow:10}}/>
+    {/* <img src="logo.png" alt="Logo" style={{width:100,height:100, position:'absolute',left:150, top:100 , borderRadius:15 , boxShadow:10}}/> */}
     <div className='todo-app'>
         <h1 className='boas_vindas'>Cis Menu</h1>
         <h3>Escolha seu Cis</h3>
