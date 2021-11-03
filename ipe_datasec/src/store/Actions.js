@@ -4,6 +4,10 @@ export const setTela = ( tela )=> ({
     type:'SET_TELA' , 
     tela: tela,
 })
+export const setCis = ( cis )=> ({
+    type:'SET_CIS' , 
+    payload: cis,
+})
 export const responder = (pontuacao )=> ({
     type:'RESPONDER' , 
     pontuacao: pontuacao,

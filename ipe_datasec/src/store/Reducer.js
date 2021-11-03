@@ -110,6 +110,12 @@ const reducer = (state = InitialState , action ) => {
                 return { ...state , 
                             tela: action.tela,
                         }
+            case 'SET_CIS':
+                return { ...state , 
+                            estadoPergunta: {...state.estadoPergunta,
+                                            cis:action.payload,
+                                            subCis:0},
+                        }
             case 'CONCLUIR':
                 return { ...state , 
                             tela: "Res",

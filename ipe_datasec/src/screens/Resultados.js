@@ -14,6 +14,8 @@ function Formulario(props) {
 
   return (
   <div className='mainContainer'>
+        <img src="logo.png" alt="Logo" style={{width:100,height:100, position:'absolute',left:150, top:100 , borderRadius:15 , boxShadow:10}}/>
+
     <div className='todo-app'>
       <div className='bloco'>
           Resultado
@@ -61,14 +63,17 @@ function Formulario(props) {
             }</>
           }
       </div>
-      <div className='todo-button' onClick={()=> dispatch( reiniciar() ) } >
-            Reiniciar
+      <div className='row'>
+          <div className='todo-button' onClick={()=> dispatch( reiniciar() ) } >
+                Reiniciar
+          </div>
+          <div className='todo-button' onClick={()=> {
+            alert('apertou')
+          }} >
+                Gerar Relatório
+          </div>
       </div>
-      <div className='todo-button' onClick={()=> {
-        alert('apertou')
-      }} >
-            Gerar Relatório
-      </div>
+      
     </div>
   </div>);
 }

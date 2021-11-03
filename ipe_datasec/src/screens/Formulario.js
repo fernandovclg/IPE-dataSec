@@ -40,6 +40,8 @@ function Formulario(props) {
 
   return (
   <div className='mainContainer'>
+    <img src="logo.png" alt="Logo" style={{width:100,height:100, position:'absolute',left:150, top:100 , borderRadius:15 , boxShadow:10}}/>
+
       {/* <div className='bloco'>
         Bloco {estadoPergunta.bloco + 1}
       </div> */}

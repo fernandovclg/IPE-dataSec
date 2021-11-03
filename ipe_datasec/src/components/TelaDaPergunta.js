@@ -3,7 +3,7 @@ import Item from './Items';
 // import Dados from '../data/Data';
 import {quest} from '../data/Data'
 
-import { voltar } from '../store/Actions';
+import { setTela, voltar } from '../store/Actions';
 import { concluir } from '../store/Actions';
 import {useSelector , useDispatch} from 'react-redux'
 import { Dados } from '../data/Data';
@@ -34,11 +34,15 @@ function TelaDaPergunta(props) {
         )
       }
       <div className="row">
-        <div className='todo-button' onClick={()=> dispatch( voltar() ) } >
-            voltar 
-        </div>
-        <div className='todo-button' onClick={()=> dispatch( concluir() ) } >
-            concluir
+        {
+          estadoPergunta.subCis>0 || estadoPergunta.pergunta>0
+          ?<div className='todo-button' onClick={()=> dispatch( voltar() ) } >
+             voltar 
+          </div>
+          :<></>
+        }
+        <div className='todo-button' onClick={()=> dispatch( setTela("CisMenu") ) } >
+            Trocar Cis
         </div>
       </div>
     </>
