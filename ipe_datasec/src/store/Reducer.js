@@ -114,6 +114,8 @@ const reducer = (state = InitialState , action ) => {
                 return { ...state , 
                             tela: "Res",
                         }
+            case 'REINICIAR':
+                return InitialState
     
 
             default: return {...state}

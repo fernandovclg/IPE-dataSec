@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import TodoList from './components/TelaDaPergunta';
-import Dados from './data/Data';
 import Formulario from './screens/Formulario';
 import Resultados from './screens/Resultados'
 import Home from './screens/Home';

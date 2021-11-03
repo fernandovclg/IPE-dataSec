@@ -15,3 +15,8 @@ export const voltar = ()=> ({
 export const concluir = ()=> ({
     type:'CONCLUIR' , 
 })
+
+export const reiniciar = ()=> ({
+    type:'REINICIAR' , 
+})
+

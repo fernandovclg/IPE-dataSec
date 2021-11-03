@@ -40,9 +40,9 @@ function Formulario(props) {
 
   return (
   <div className='mainContainer'>
-      <div className='bloco'>
+      {/* <div className='bloco'>
         Bloco {estadoPergunta.bloco + 1}
-      </div>
+      </div> */}
 
     <div className='todo-app'>
       <TelaDaPergunta />

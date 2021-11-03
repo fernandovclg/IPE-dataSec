@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import {useSelector , useDispatch} from 'react-redux'
 
+import { reiniciar } from '../store/Actions';
+
 function Formulario(props) {
+
+  
+
+  const dispatch = useDispatch() 
+
   const relatorio = useSelector( state => state.relatorio )
   const soma = relatorio.politicasConcluidas / 122 + relatorio.implementados1_6 / 47 + relatorio.implementados / 122 + relatorio.automatizados / 122 + relatorio.relatados / 122
 
@@ -35,24 +42,32 @@ function Formulario(props) {
       </div>
       <div className='todo-input'>
           Nivel de Maturidade : {0===soma
-          ?<text>inexistente</text>
+          ?<text className='txt_resultado'>inexistente</text>
           :<>{soma<=1
-            ?<text>inicial</text>
+            ?<text className='txt_resultado'>inicial</text>
             :<>{soma<=2
-              ?<text>repetivel</text>
+              ?<text className='txt_resultado'>repetivel</text>
               :<>{soma<=3
-                ?<text>definido</text>
+                ?<text className='txt_resultado'>definido</text>
                 :<>{soma<=4
-                  ?<text>gerenciado</text>
+                  ?<text className='txt_resultado'>gerenciado</text>
                   :<>{soma<=5
-                    ?<text>otimizado</text>
-                    :<text>otimizado</text>
+                    ?<text className='txt_resultado'>otimizado</text>
+                    :<text className='txt_resultado'>otimizado</text>
                     }</>
                   }</>
                 }</>
               }</>
             }</>
           }
+      </div>
+      <div className='todo-button' onClick={()=> dispatch( reiniciar() ) } >
+            Reiniciar
+      </div>
+      <div className='todo-button' onClick={()=> {
+        alert('apertou')
+      }} >
+            Gerar Relatório
       </div>
     </div>
   </div>);
