@@ -1,8 +1,1 @@
-{
-    "codigo":0.8741012006852418,
-    "nome":"IME",
-    "usuario":"Al Augusto",
-    "cargo":"Técnico",
-    "data":"14/11/2021",
-    "resultado":[0,0,0,0,0]
-}
+{"codigo":0.11040458604828007,"nome":"IME","usuario":"Al Augusto","cargo":"Técnico","data":"15/11/2021","resultado":[42,41.25,41.25,33,39.25],"cis1":[2,3,5,1,0,1,4],"cis2":[1,1,4,0,0,5,3,2,1,0],"cis3":[5,3,1,0,0,1,1],"cis4":[1,2,1]}

@@ -14,7 +14,8 @@ function Formulario(props) {
   const user = useSelector( state => state.user )
   const relatorio = useSelector( state => state.relatorio )
   const resultadoCis = useSelector( state => state.resultadoCis )
-  const soma = relatorio.politicasConcluidas / 122 + relatorio.implementados1_6 / 47 + relatorio.implementados / 122 + relatorio.automatizados / 122 + relatorio.relatados / 122
+  // const soma = relatorio.politicasConcluidas / 122 + relatorio.implementados1_6 / 47 + relatorio.implementados / 122 + relatorio.automatizados / 122 + relatorio.relatados / 122
+  const soma = relatorio.politicasConcluidas / 22 + relatorio.implementados1_6 / 12 + relatorio.implementados / 22 + relatorio.automatizados / 22 + relatorio.relatados / 22
   // const somaParc = relatorio.politicasConcluidas / 122 + relatorio.implementados1_6 / 47 + relatorio.implementados / 122 + relatorio.automatizados / 122 + relatorio.relatados / 122
 
   const round = (num, places=5) => {
